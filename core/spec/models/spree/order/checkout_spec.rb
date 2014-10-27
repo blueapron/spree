@@ -646,7 +646,7 @@ describe Spree::Order do
         request_env = { "USER_AGENT" => "Firefox" }
 
         expected_hash = { "payments_attributes" => [hash_including("request_env" => request_env)] }
-        expect(order).to receive(:update_attributes).with expected_hash
+        expect(order.contents).to receive(:update_cart).with expected_hash
 
         order.update_from_params(params, permitted_params, request_env)
       end
@@ -673,7 +673,7 @@ describe Spree::Order do
         let(:params) { ActionController::Parameters.new(order: {  good_param: 'okay' } ) }
 
         it 'accepts permitted attributes' do
-          order.should_receive(:update_attributes).with({"good_param" => 'okay'})
+          expect(order.contents).to receive(:update_cart).with({"good_param" => 'okay'})
           order.update_from_params(params, permitted_params)
         end
       end
