@@ -248,7 +248,7 @@ module Spree
                 attributes[:payments_attributes].first[:request_env] = request_env
               end
 
-              success = self.update_attributes(attributes)
+              success = self.contents.update_cart(attributes)
               set_shipments_cost if self.shipments.any?
             end
 
