@@ -248,7 +248,13 @@ module Spree
                 attributes[:payments_attributes].first[:request_env] = request_env
               end
 
-              success = self.contents.update_cart(attributes)
+              success = self.update_attributes(attributes)
+              # Invoke any cart based promotions
+              if success
+                update_totals
+                Spree::PromotionHandler::Cart.new(self).activate
+              end
+
               set_shipments_cost if self.shipments.any?
             end
 
