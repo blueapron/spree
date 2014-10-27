@@ -249,10 +249,12 @@ module Spree
               end
 
               success = self.update_attributes(attributes)
+
               # Invoke any cart based promotions
               if success
-                update_totals
                 Spree::PromotionHandler::Cart.new(self).activate
+                update_totals
+                save!
               end
 
               set_shipments_cost if self.shipments.any?
