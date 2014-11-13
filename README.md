@@ -23,6 +23,7 @@ The following branch ```2-3-dev``` contains Blue Apron specific code that is awa
 - [x] Restart checkout if not enough inventory, https://github.com/spree/spree/pull/5585
 - [ ] Provide total_on_hand in API, https://github.com/spree/spree/pull/5593
 - [ ] Provide backorder state in variant and JSON, https://github.com/spree/spree/pull/5595
+- [ ] Provide classification in product JSON, https://github.com/spree/spree/pull/5609
 
 SUMMARY
 -------
