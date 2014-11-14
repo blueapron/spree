@@ -125,15 +125,16 @@ module Spree
         shipment.adjustments << adjustment
       end
 
-      subject { api_get :show, :id => order.to_param }
-
-      it 'contains adjustments in JSON' do
-        subject
-        # Test to insure shipment has adjustments
-        shipment = json_response['shipments'][0]
-        expect(shipment).to_not be_nil
-        expect(shipment['adjustments'][0]).not_to be_empty
-        expect(shipment['adjustments'][0]['label']).to eq(adjustment.label)
+      context 'when inventory information is present' do
+        it 'contains stock information on variant' do
+          subject
+          variant = json_response['line_items'][0]['variant']
+          expect(variant).to_not be_nil
+          expect(variant['in_stock']).to eq(false)
+          expect(variant['total_on_hand']).to eq(0)
+          expect(variant['is_backorderable']).to eq(true)
+          expect(variant['is_destroyed']).to eq(false)
+        end
       end
     end
 
