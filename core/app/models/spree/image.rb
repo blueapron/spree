@@ -7,7 +7,7 @@ module Spree
                       default_style: :product,
                       url: '/spree/products/:id/:style/:basename.:extension',
                       path: ':rails_root/public/spree/products/:id/:style/:basename.:extension',
-                      convert_options: { all: '-strip -auto-orient -colorspace sRGB' }
+                      convert_options: { all: '-strip -auto-orient' }
     validates_attachment :attachment,
       :presence => true,
       :content_type => { :content_type => %w(image/jpeg image/jpg image/png image/gif) }
