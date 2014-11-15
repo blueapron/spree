@@ -21,9 +21,11 @@ The following branch ```2-3-dev``` contains Blue Apron specific code that is awa
 - [x] Allow HTTP Patch of Spree::Order on API, https://github.com/spree/spree/pull/5544
 - [x] Provide Taxons in Product API payload, https://github.com/spree/spree/pull/5569
 - [x] Restart checkout if not enough inventory, https://github.com/spree/spree/pull/5585
-- [ ] Provide total_on_hand in API, https://github.com/spree/spree/pull/5593
-- [ ] Provide backorder state in variant and JSON, https://github.com/spree/spree/pull/5595
-- [ ] Provide classification in product JSON, https://github.com/spree/spree/pull/5609
+- [x] Provide total_on_hand in API, https://github.com/spree/spree/pull/5593
+- [x] Provide backorder state in variant and JSON, https://github.com/spree/spree/pull/5595
+- [x] Provide classification in product JSON, https://github.com/spree/spree/pull/5609
+- [x] Handle destroy variants in line items, https://github.com/spree/spree/pull/5611
+- [x] Cache button, https://github.com/spree/spree/pull/5615
 
 SUMMARY
 -------
