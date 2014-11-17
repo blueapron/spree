@@ -26,6 +26,7 @@ The following branch ```2-3-dev``` contains Blue Apron specific code that is awa
 - [x] Provide classification in product JSON, https://github.com/spree/spree/pull/5609
 - [x] Handle destroy variants in line items, https://github.com/spree/spree/pull/5611
 - [x] Cache button, https://github.com/spree/spree/pull/5615
+- [x] Callbacks for Clear Cache button, https://github.com/spree/spree/pull/5623
 
 SUMMARY
 -------
