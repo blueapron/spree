@@ -11,7 +11,7 @@ The following branch ```2-3-dev``` contains Blue Apron specific code that is awa
 - [x] Let ProductProperty.value by dynamically length validated, https://github.com/spree/spree/pull/5361
 - [x] Update shipment total moving to delivery, https://github.com/spree/spree/pull/5376
 - [x] Support Tax Code, https://github.com/spree/spree/pull/5409
-- [ ] Disable FE configuration, https://github.com/spree/spree/pull/5360
+- [ ] CLOSED (Need alternative) Disable FE configuration, https://github.com/spree/spree/pull/5360
 - [x] Allow filter on risky Orders, https://github.com/spree/spree/pull/5438
 - [x] Code for Shipping Methods, https://github.com/spree/spree/pull/5439
 - [x] Enforce params for API shipments create, https://github.com/spree/spree/pull/5458
