@@ -2,8 +2,6 @@ module Spree
   class StoreController < Spree::BaseController
     include Spree::Core::ControllerHelpers::Order
 
-    prepend_before_filter :check_if_frontend_enabled
-
     def unauthorized
       render 'spree/shared/unauthorized', :layout => Spree::Config[:layout], :status => 401
     end
@@ -35,11 +33,6 @@ module Spree
       def config_locale
         Spree::Frontend::Config[:locale]
       end
-
-      def check_if_frontend_enabled
-        render_404 if !Spree::Config[:enable_frontend]
-      end
-
   end
 end
 
