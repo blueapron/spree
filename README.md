@@ -27,6 +27,12 @@ The following branch ```2-3-dev``` contains Blue Apron specific code that is awa
 - [x] Cache button, https://github.com/spree/spree/pull/5615
 - [x] Callbacks for Clear Cache button, https://github.com/spree/spree/pull/5623
 
+REVERTED PRS
+
+The following pull requests affect functionality above and will need to be addressed when we upgrade Spree.
+
+- [ ] Undo HTTP Patch of order, https://github.com/spree/spree/pull/5946
+
 SUMMARY
 -------
 
