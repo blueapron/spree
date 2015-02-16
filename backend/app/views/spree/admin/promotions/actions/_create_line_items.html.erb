@@ -1,6 +1,6 @@
 <% promotion_action.promotion_action_line_items.each do |item| %>
-  <strong><%= item.quantity %> x <%= item.variant.product.name %></strong>
-  <%= item.variant.options_text %>
+  <strong><%= item.quantity %> x <%= item.variant.try(:product).try(:name) %></strong>
+  <%= item.variant.try(:options_text) %>
 <% end %>
 
 <% if promotion_action.promotion_action_line_items.empty? %>
