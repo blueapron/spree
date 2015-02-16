@@ -37,7 +37,7 @@ module Spree
         # needs to be manually removed from the order by the customer
         def perform(options = {})
           order = options[:order]
-          return unless self.eligible? order
+          return false unless order.present? && self.eligible?(order)
 
           promotion_action_line_items.each do |item|
             current_quantity = order.quantity_of(item.variant)
