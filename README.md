@@ -33,6 +33,10 @@ The following pull requests affect functionality above and will need to be addre
 
 - [ ] Undo HTTP Patch of order, https://github.com/spree/spree/pull/5946
 
+The following changes will not be accepted into Spree
+
+- [ ] Bump ActiveMerchant to 1.49.
+
 SUMMARY
 -------
 
