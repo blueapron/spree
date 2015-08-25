@@ -35,7 +35,7 @@ The following pull requests affect functionality above and will need to be addre
 
 The following changes will not be accepted into Spree
 
-- [ ] Bump ActiveMerchant to 1.49.
+- [ ] Bump ActiveMerchant to 1.52.
 
 SUMMARY
 -------
