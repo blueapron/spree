@@ -36,6 +36,7 @@ The following pull requests affect functionality above and will need to be addre
 The following changes will not be accepted into Spree
 
 - [ ] Bump ActiveMerchant to 1.52.
+- [ ] Update StripeGateway to accept `destination` parameter, https://github.com/blueapron/spree_gateway/pull/3
 
 SUMMARY
 -------
