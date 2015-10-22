@@ -24,7 +24,6 @@
   <thead>
     <tr data-hook="tax_header">
       <th><%= Spree.t(:name) %></th>
-      <th><%= Spree.t(:tax_code) %></th>
       <th><%= Spree.t(:description) %></th>
       <th><%= Spree.t(:default) %></th>
       <th class="actions"></th>
@@ -37,7 +36,6 @@
     %>
       <tr id="<%= spree_dom_id tax_category %>" data-hook="tax_row" class="<%= cycle('odd', 'even')%>">
         <td class="align-center"><%= tax_category.name %></td>
-        <td class="align-center"><%= tax_category.tax_code %></td>
         <td class="align-center"><%= tax_category.description %></td>
         <td class="align-center"><%= tax_category.is_default? ? Spree.t(:say_yes) : Spree.t(:say_no) %></td>
         <td class="actions">

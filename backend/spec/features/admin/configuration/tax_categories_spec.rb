@@ -10,7 +10,7 @@ describe "Tax Categories", :type => :feature do
 
   context "admin visiting tax categories list" do
     it "should display the existing tax categories" do
-      create(:tax_category, :name => "Clothing", :tax_code => "CL001", :description => "For Clothing")
+      create(:tax_category, :name => "Clothing", :description => "For Clothing")
       click_link "Tax Categories"
       expect(page).to have_content("Listing Tax Categories")
       within_row(1) do
