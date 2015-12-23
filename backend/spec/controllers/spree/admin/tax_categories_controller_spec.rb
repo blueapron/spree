@@ -15,8 +15,8 @@ module Spree
 
       describe 'PUT #update' do
         let(:tax_category) { create :tax_category }
-    
-        subject { spree_put :update, {id: tax_category.id, tax_category: { name: 'Foo', tax_code: 'Bar' }}}
+
+        subject { spree_put :update, {id: tax_category.id, tax_category: { name: 'Foo', description: 'Bar' }}}
 
         it 'should redirect' do
           expect(subject).to be_redirect
@@ -26,7 +26,7 @@ module Spree
           subject
           tax_category.reload
           expect(tax_category.name).to eq('Foo')
-          expect(tax_category.tax_code).to eq('Bar')
+          expect(tax_category.description).to eq('Bar')
         end
       end
     end
