@@ -191,7 +191,7 @@ describe Spree::Order, :type => :model do
     context 'when variant is destroyed' do
       before do
         allow(order).to receive(:restart_checkout_flow)
-        order.line_items.first.variant.destroy
+        allow_any_instance_of(Spree::Variant).to receive(:destroyed?) { true }
       end
 
       it 'should restart checkout flow' do
