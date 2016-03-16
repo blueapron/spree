@@ -13,7 +13,7 @@ describe Spree::Payment, :type => :model do
     Spree::CreditCard.create!(
       number: "4111111111111111",
       month: "12",
-      year: "2014",
+      year: Time.now.year + 1,
       verification_value: "123",
       name: "Name",
       imported: false
@@ -173,8 +173,7 @@ describe Spree::Payment, :type => :model do
       end
 
       it "should log the response" do
-        expect(payment.log_entries).to receive(:create!).with(:details => anything)
-        payment.authorize!
+        expect { payment.authorize! }.to change { Spree::LogEntry.count }.by(1)
       end
 
       context "when gateway does not match the environment" do
@@ -224,8 +223,7 @@ describe Spree::Payment, :type => :model do
       end
 
       it "should log the response" do
-        expect(payment.log_entries).to receive(:create!).with(:details => anything)
-        payment.purchase!
+        expect { payment.purchase! }.to change { Spree::LogEntry.count }.by(1)
       end
 
       context "when gateway does not match the environment" do
@@ -451,8 +449,7 @@ describe Spree::Payment, :type => :model do
       end
 
       it "should log the response" do
-        expect(payment.log_entries).to receive(:create!).with(:details => anything)
-        payment.credit!
+        expect { payment.credit! }.to change { Spree::LogEntry.count }.by(1)
       end
 
       context "when gateway does not match the environment" do
@@ -613,7 +610,7 @@ describe Spree::Payment, :type => :model do
 
       context "when there is an error connecting to the gateway" do
         it "should call gateway_error " do
-          expect(gateway).to receive(:create_profile).and_raise(ActiveMerchant::ConnectionError)
+          expect(gateway).to receive(:create_profile).and_raise(ActiveMerchant::ConnectionError.new(double, double))
           expect do
             Spree::Payment.create(
               :amount => 100,
@@ -631,7 +628,7 @@ describe Spree::Payment, :type => :model do
 
           order.payments.create!(source_attributes: {number: "4111111111111115",
                                                     month: "12",
-                                                    year: "2014",
+                                                    year: Time.now.year + 1,
                                                     verification_value: "123",
                                                     name: "Name"
           },
@@ -641,7 +638,7 @@ describe Spree::Payment, :type => :model do
           expect(order.payments.count).to eq(1)
           order.payments.create!(source_attributes: {number: "4111111111111111",
                                                     month: "12",
-                                                    year: "2014",
+                                                    year: Time.now.year + 1,
                                                     verification_value: "123",
                                                     name: "Name"
           },
