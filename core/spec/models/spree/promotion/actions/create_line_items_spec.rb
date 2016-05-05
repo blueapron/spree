@@ -20,6 +20,12 @@ describe Spree::Promotion::Actions::CreateLineItems, :type => :model do
       )
     end
 
+    context "order is nil" do
+      it "returns false" do
+        expect(action.perform(order: nil)).to eq(false)
+      end
+    end
+
     context "order is eligible" do
       before do
         allow(promotion).to receive_messages :eligible => true
