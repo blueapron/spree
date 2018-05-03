@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.summary     = 'The bare bones necessary for Spree.'
   s.description = 'The bare bones necessary for Spree.'
 
-  s.required_ruby_version = '>= 1.9.3'
+  s.required_ruby_version = '>= 2.3.4'
   s.author      = 'Sean Schofield'
   s.email       = 'sean@spreecommerce.com'
   s.homepage    = 'http://spreecommerce.com'
@@ -33,7 +33,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'monetize'
   s.add_dependency 'paperclip', '~> 4.3.6'
   s.add_dependency 'paranoia', '~> 2.0'
-  s.add_dependency 'rails', '~> 4.1.6'
+  s.add_dependency 'rails', '~> 4.2.10'
   s.add_dependency 'ransack', '~> 1.4.1'
   s.add_dependency 'state_machine', '1.2.0'
   s.add_dependency 'stringex', '~> 1.5.1'
